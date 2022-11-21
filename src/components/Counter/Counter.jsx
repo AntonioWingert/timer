@@ -97,6 +97,7 @@ function Counter() {
             <input
               type="number"
               placeholder="mm"
+              min="0"
               value={ minute }
               onChange={ setMinutes }
             />
@@ -105,6 +106,7 @@ function Counter() {
               type="number"
               placeholder="ss"
               value={ second }
+              min="0"
               onChange={ setSecondsFunc }
             />
           </div>
