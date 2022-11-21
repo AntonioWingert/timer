@@ -48,6 +48,7 @@ function Counter() {
 
   const pauseTimer = () => {
     clearInterval(timer);
+    setOff(true);
     setTimer(undefined);
   };
 
