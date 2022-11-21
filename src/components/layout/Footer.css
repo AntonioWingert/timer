@@ -1,0 +1,25 @@
+.footer-container {
+  align-items: center;
+  background-color: black;
+  border-radius: 0 0 5px 5px;
+  color: white;
+  display: flex;
+  height: 50px;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.icons-footer {
+  display: flex;
+  font-size: 25px;
+  width: 60px;
+}
+
+.icons-footer a {
+  color: white;
+  margin-left: 5px;
+}
+
+.trybe-text {
+  margin-right: 5px;
+}
