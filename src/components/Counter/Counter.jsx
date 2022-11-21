@@ -15,6 +15,7 @@ function Counter() {
   const [minute, setMinute] = useState('');
   const [second, setSecond] = useState('');
   const [IsDisable, setDisable] = useState(false);
+  const [isOff, setOff] = useState(true);
 
   const secondsToTime = (secs) => {
     const minuteDivisor = secs % ONE_SECOND_IN_HOUR;
@@ -27,11 +28,13 @@ function Counter() {
   };
 
   const startTimer = () => {
+    if (!isOff) return;
     const timerInterval = setInterval(() => {
       setSeconds((prevState) => {
         if (prevState === 0) {
           clearInterval(timerInterval);
           setDisable(false);
+          setOff(true);
           alert('Tempo concluido!');
           return 0;
         }
@@ -40,6 +43,7 @@ function Counter() {
     }, ONE_SECOND);
 
     setTimer(timerInterval);
+    setOff(false);
   };
 
   const pauseTimer = () => {
@@ -50,6 +54,7 @@ function Counter() {
   const stopTimer = () => {
     pauseTimer();
     setSeconds(DEFAULT_TIMER);
+    setOff(true);
     setDisable(false);
     setMinute('');
     setSecond('');
