@@ -87,7 +87,7 @@ function Counter() {
     <main>
       <section className="main-container">
         <div className="main-container-timer">
-          <p className="timer">{secondsToTime(seconds)}</p>
+          <p role="timer" className="timer">{secondsToTime(seconds)}</p>
           <div className="timer-container">
             <input
               type="number"
@@ -113,6 +113,7 @@ function Counter() {
           </button>
           <div className="button-container">
             <BsPlay
+              role="menuitem"
               className="btn-options"
               type="button"
               onClick={ startTimer }
@@ -120,6 +121,7 @@ function Counter() {
               Play
             </BsPlay>
             <BsPause
+              role="menuitem"
               className="btn-options"
               type="button"
               onClick={ pauseTimer }
@@ -127,6 +129,7 @@ function Counter() {
               Pausar
             </BsPause>
             <BsStop
+              role="menuitem"
               className="btn-options"
               type="button"
               onClick={ stopTimer }
